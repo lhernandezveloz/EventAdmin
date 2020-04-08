@@ -205,8 +205,27 @@
     <Compile Include="Migrations\202004081941211_initialModel.Designer.cs">
       <DependentUpon>202004081941211_initialModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004082031489_Add-Concert-and-Genere-Tables.cs" />
+    <Compile Include="Migrations\202004082031489_Add-Concert-and-Genere-Tables.Designer.cs">
+      <DependentUpon>202004082031489_Add-Concert-and-Genere-Tables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004082039313_update-Concert-table.cs" />
+    <Compile Include="Migrations\202004082039313_update-Concert-table.Designer.cs">
+      <DependentUpon>202004082039313_update-Concert-table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004082049449_PopulateDataOnGenereTable.cs" />
+    <Compile Include="Migrations\202004082049449_PopulateDataOnGenereTable.Designer.cs">
+      <DependentUpon>202004082049449_PopulateDataOnGenereTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004082105178_renameEntity-Genere-to-Genre.cs" />
+    <Compile Include="Migrations\202004082105178_renameEntity-Genere-to-Genre.Designer.cs">
+      <DependentUpon>202004082105178_renameEntity-Genere-to-Genre.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\Concert.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -287,6 +306,18 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202004081941211_initialModel.resx">
       <DependentUpon>202004081941211_initialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004082031489_Add-Concert-and-Genere-Tables.resx">
+      <DependentUpon>202004082031489_Add-Concert-and-Genere-Tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004082039313_update-Concert-table.resx">
+      <DependentUpon>202004082039313_update-Concert-table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004082049449_PopulateDataOnGenereTable.resx">
+      <DependentUpon>202004082049449_PopulateDataOnGenereTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004082105178_renameEntity-Genere-to-Genre.resx">
+      <DependentUpon>202004082105178_renameEntity-Genere-to-Genre.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
