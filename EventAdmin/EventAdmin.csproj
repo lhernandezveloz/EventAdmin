@@ -222,6 +222,14 @@
     <Compile Include="Migrations\202004082105178_renameEntity-Genere-to-Genre.Designer.cs">
       <DependentUpon>202004082105178_renameEntity-Genere-to-Genre.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004100152307_fixissueOnMaxLenght.cs" />
+    <Compile Include="Migrations\202004100152307_fixissueOnMaxLenght.Designer.cs">
+      <DependentUpon>202004100152307_fixissueOnMaxLenght.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004100159116_fixissueOnMaxLenght1.cs" />
+    <Compile Include="Migrations\202004100159116_fixissueOnMaxLenght1.Designer.cs">
+      <DependentUpon>202004100159116_fixissueOnMaxLenght1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -321,6 +329,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004082105178_renameEntity-Genere-to-Genre.resx">
       <DependentUpon>202004082105178_renameEntity-Genere-to-Genre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004100152307_fixissueOnMaxLenght.resx">
+      <DependentUpon>202004100152307_fixissueOnMaxLenght.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004100159116_fixissueOnMaxLenght1.resx">
+      <DependentUpon>202004100159116_fixissueOnMaxLenght1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

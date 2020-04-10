@@ -1,5 +1,6 @@
 ﻿using EventAdmin.Models;
 using EventAdmin.ViewModels;
+using Microsoft.AspNet.Identity;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -14,6 +15,7 @@ namespace EventAdmin.Controllers
             _dbContext = new ApplicationDbContext();
         }
 
+        [Authorize]
         public ActionResult Create()
         {
             var viewModel = new ConcertFormViewModel
@@ -22,6 +24,24 @@ namespace EventAdmin.Controllers
             };
 
             return View(viewModel);
+        }
+
+        [Authorize, HttpPost]
+        public ActionResult Create(ConcertFormViewModel viewModel)
+        {
+            var concert = new Concert
+            {
+                ArtistId = User.Identity.GetUserId(),
+                DateTime = viewModel.GetDateTime(),
+                GenreId = viewModel.Genre,
+                Venue = viewModel.Venue
+            };
+
+            _dbContext.Concerts.Add(concert);
+            _dbContext.SaveChanges();
+
+            return RedirectToAction("Index", "Home");
+
         }
     }
 }

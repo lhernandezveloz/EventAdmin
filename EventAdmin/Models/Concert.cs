@@ -7,15 +7,19 @@ namespace EventAdmin.Models
     {
         public int Id { get; set; }
 
-        [Required, MaxLength(225)]
         public ApplicationUser Artist { get; set; }
+
+        [Required]
+        public string ArtistId { get; set; }
 
         [Required, MaxLength(255)]
         public string Venue { get; set; }
 
         public DateTime DateTime { get; set; }
 
-        [Required, MaxLength(255)]
         public Genre Genre { get; set; }
+
+        [Required]
+        public int GenreId { get; set; }
     }
 }

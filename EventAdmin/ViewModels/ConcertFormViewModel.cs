@@ -1,4 +1,5 @@
 ﻿using EventAdmin.Models;
+using System;
 using System.Collections.Generic;
 
 namespace EventAdmin.ViewModels
@@ -11,5 +12,6 @@ namespace EventAdmin.ViewModels
         public int Genre { get; set; }
         public IEnumerable<Genre> Genres { get; set; }
 
+        public DateTime GetDateTime() => DateTime.Parse($"{Date} {Time}");
     }
 }
