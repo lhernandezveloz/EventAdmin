@@ -88,8 +88,12 @@ label {
     font-size: 17px;
 }
 
-
-
 .form-control:focus{
     box-shadow: none;
+}
+
+.btn-primary {
+    padding: 6px 20px;
+    font-size: 17px;
+    font-weight: 700;
 }
