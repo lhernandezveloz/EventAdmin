@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    font-family: 'Lato', sans-serif;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +22,74 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+span.field-validation-error {
+    color: red;
+    font-weight: bold;
+}
+
+
+/*Overriding Bootstrap */
+
+.navbar-inverse {
+    background-color: #ea2a2a;
+    border-color: #ea2a2a;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #fff;
+    background-color: #ea2a2a;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #fff;
+}
+.nav > li > a {
+    font-size: 17px;
+}
+
+.navbar-brand {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus {
+    background-color: #ea2a2a;
+}
+
+.dropdown-menu a {
+    color: #ea2a2a;
+    font-size: 17px;
+    margin-left: 5px;
+}
+
+
+
+a:hover,
+a:focus {
+  color: #ea2a2a;
+  text-decoration: underline;
+}
+
+.navbar-inverse .navbar-nav > .dropdown > a .caret {
+    border-top-color: #fff;
+    border-bottom-color: #fff;
+}
+
+/*Form Concerts*/
+.label-info {
+    font-size: 12px;
+}
+
+label {
+    font-size: 17px;
+}
+
+
+
+.form-control:focus{
+    box-shadow: none;
 }

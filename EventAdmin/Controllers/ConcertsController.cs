@@ -26,9 +26,14 @@ namespace EventAdmin.Controllers
             return View(viewModel);
         }
 
-        [Authorize, HttpPost]
+        [Authorize, HttpPost, ValidateAntiForgeryToken]
         public ActionResult Create(ConcertFormViewModel viewModel)
         {
+            if (!ModelState.IsValid)
+            {
+                viewModel.Genres = _dbContext.Genres.ToList();
+                return View("Create", viewModel);
+            }
             var concert = new Concert
             {
                 ArtistId = User.Identity.GetUserId(),

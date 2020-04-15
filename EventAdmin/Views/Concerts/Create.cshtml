@@ -1,32 +1,45 @@
 ﻿@model EventAdmin.ViewModels.ConcertFormViewModel
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Add New Concert";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Create</h2>
+<h2>Add New Concert</h2>
 @using (Html.BeginForm("Create", "Concerts"))
 {
+    @Html.AntiForgeryToken()
+
+    <p><span class="label label-info">All Fields Are Required</span></p>
+
     <div class="form-group">
         @Html.LabelFor(m => m.Venue)
-        @Html.TextBoxFor(t => t.Venue, new { @class = "form-control" })
+        @Html.TextBoxFor(m => m.Venue, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Venue)
 
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Date)
-        @Html.TextBoxFor(t => t.Date, new { @class = "form-control" })
+        @Html.TextBoxFor(m => m.Date, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Date)
 
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Time)
-        @Html.TextBoxFor(t => t.Time, new { @class = "form-control" })
+        @Html.TextBoxFor(m => m.Time, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Time)
 
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Genre)
-        @Html.DropDownListFor(t => t.Genre, new SelectList(Model.Genres, "Id", "Name"), "", new { @class = "form-control" })
+        @Html.DropDownListFor(m => m.Genre, new SelectList(Model.Genres, "Id", "Name"), "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Genre)
 
     </div>
 
     <button type="submit" class="btn btn-primary">Save</button>
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
 }
