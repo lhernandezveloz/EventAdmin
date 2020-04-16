@@ -2,8 +2,23 @@
     @{
         ViewBag.Title = "Home Page";
     }
-    <ul>
-        @foreach (var concert in Model)
-        {
-            <li>@concert.DateTime - @concert.Artist.FirstName</li> }
-    </ul>
+
+    <h2>Concerts</h2>
+    @foreach (var concert in Model)
+    {
+            <div class="container-concerts">
+                <div class="calendar-custom">
+                    <div class="calendar-month calendar-general">
+                        @concert.DateTime.ToString("MMM")
+                    </div>
+                    <div class="calendar-day calendar-general">
+                        @concert.DateTime.ToString("dd")
+                    </div>
+                </div>
+                <div class="artist-info">
+                    <h4>@concert.Artist.FullName()</h4>
+                    <h5 class="genre">@concert.Genre.Name</h5>
+                </div>
+            </div>
+    }
+

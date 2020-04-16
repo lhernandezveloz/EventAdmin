@@ -97,3 +97,50 @@ label {
     font-size: 17px;
     font-weight: 700;
 }
+
+.calendar-month {
+    background-color: red;
+    width: 80px;
+    height: 25px;
+    border-radius: 12px 12px 0 0;
+    color: #fff;
+    font-size: 17px;
+}
+.calendar-general{
+    text-align: center;
+    font-weight: 700;
+}
+.calendar-day {
+    width: 80px;
+    height: 45px;
+    border-radius: 0 0 6px 6px;
+    border: 1px;
+    border-style: solid;
+    border-color: #4545541a;
+    color: gray;
+    font-size: 25px;
+}
+
+.container-concerts {
+    display: flex;
+    justify-content: flex-start;
+    justify-content: space-between;
+    width: 400px;
+    margin-bottom: 35px;
+}
+
+.artist-info{
+    width: 350px;
+    margin-left: 15px;
+    font-family: 'Lato', sans-serif;
+}
+
+.artist-info h4{
+    font-size: 17px;
+    font-weight: 700;
+}
+
+h5.genre {
+    color: #827e7e;
+    font-size: 16px;
+}

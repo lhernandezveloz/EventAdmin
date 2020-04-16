@@ -19,6 +19,7 @@ namespace EventAdmin.Controllers
         {
             var concerts = _DbContext.Concerts
                 .Include(x => x.Artist)
+                .Include(x => x.Genre)
                 .Where(x => x.DateTime > DateTime.Now);
 
             return View(concerts);
