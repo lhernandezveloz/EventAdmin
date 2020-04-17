@@ -144,3 +144,15 @@ h5.genre {
     color: #827e7e;
     font-size: 16px;
 }
+
+.going-container {
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-going{
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    border-radius: 12px;
+}

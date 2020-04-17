@@ -1,24 +1,58 @@
 ﻿@model IEnumerable<EventAdmin.Models.Concert>
-    @{
-        ViewBag.Title = "Home Page";
-    }
+@{
+    ViewBag.Title = "Home Page";
+}
 
-    <h2>Concerts</h2>
-    @foreach (var concert in Model)
-    {
-            <div class="container-concerts">
-                <div class="calendar-custom">
-                    <div class="calendar-month calendar-general">
-                        @concert.DateTime.ToString("MMM")
-                    </div>
-                    <div class="calendar-day calendar-general">
-                        @concert.DateTime.ToString("dd")
-                    </div>
-                </div>
-                <div class="artist-info">
-                    <h4>@concert.Artist.FullName()</h4>
-                    <h5 class="genre">@concert.Genre.Name</h5>
-                </div>
+<h2>Concerts</h2>
+@foreach (var concert in Model)
+{
+    <div class="container-concerts">
+        <div class="calendar-custom">
+            <div class="calendar-month calendar-general">
+                @concert.DateTime.ToString("MMM")
             </div>
-    }
+            <div class="calendar-day calendar-general">
+                @concert.DateTime.ToString("dd")
+            </div>
+        </div>
+        <div class="artist-info">
+            <h4>@concert.Artist.FullName()</h4>
+            <div class="going-container">
+                <h5 class="genre">@concert.Genre.Name</h5>
+                <button concert-id="@concert.Id" class="btn btn-default btn-sm btn-going">Going?</button>
+            </div>
 
+        </div>
+    </div>
+}
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $(".btn-going").load(function (e) {
+                var btn = $(e.target);
+                $.get("/api/attendances", { concertId: btn.attr("concert-id") })
+                .done(function () {
+                    btn.removeClass("btn-default")
+                        .addClass("btn-info")
+                        .text("Going");
+                })
+            })
+
+            $(".btn-going").click(function (e) {
+                var btn = $(e.target);
+                $.post("/api/attendances", { concertId : btn.attr("concert-id") })
+                .done(function () {
+                    btn.removeClass("btn-default")
+                        .addClass("btn-info")
+                        .text("Going");
+                })
+                .fail(function () {
+                    alert("Something wrong :(");
+                })
+            })
+        });
+    </script>
+    
+}
