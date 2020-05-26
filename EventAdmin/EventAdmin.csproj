@@ -77,6 +77,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -253,18 +257,39 @@
     <Compile Include="Migrations\202004162122468_AddAttendeceModel.Designer.cs">
       <DependentUpon>202004162122468_AddAttendeceModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004181420059_addingAttencesCollection.cs" />
+    <Compile Include="Migrations\202004181420059_addingAttencesCollection.Designer.cs">
+      <DependentUpon>202004181420059_addingAttencesCollection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004181428521_addingAttencesCollection1.cs" />
+    <Compile Include="Migrations\202004181428521_addingAttencesCollection1.Designer.cs">
+      <DependentUpon>202004181428521_addingAttencesCollection1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004181457525_addingAttencesCollectionFIX.cs" />
+    <Compile Include="Migrations\202004181457525_addingAttencesCollectionFIX.Designer.cs">
+      <DependentUpon>202004181457525_addingAttencesCollectionFIX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004181509473_addingAttendeestoConcert.cs" />
+    <Compile Include="Migrations\202004181509473_addingAttendeestoConcert.Designer.cs">
+      <DependentUpon>202004181509473_addingAttendeestoConcert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004181534250_RemovingAttendeestoConcert.cs" />
+    <Compile Include="Migrations\202004181534250_RemovingAttendeestoConcert.Designer.cs">
+      <DependentUpon>202004181534250_RemovingAttendeestoConcert.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Attendance.cs" />
     <Compile Include="Models\Concert.cs" />
+    <Compile Include="Models\DIModule.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\ConcertAttendeeViewModel.cs" />
     <Compile Include="ViewModels\ConcertFormViewModel.cs" />
-    <Compile Include="ViewModels\DuplicatAttendee.cs" />
     <Compile Include="ViewModels\FutureDate.cs" />
     <Compile Include="ViewModels\ValidateTime.cs" />
   </ItemGroup>
@@ -368,6 +393,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004162122468_AddAttendeceModel.resx">
       <DependentUpon>202004162122468_AddAttendeceModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004181420059_addingAttencesCollection.resx">
+      <DependentUpon>202004181420059_addingAttencesCollection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004181428521_addingAttencesCollection1.resx">
+      <DependentUpon>202004181428521_addingAttencesCollection1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004181457525_addingAttencesCollectionFIX.resx">
+      <DependentUpon>202004181457525_addingAttencesCollectionFIX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004181509473_addingAttendeestoConcert.resx">
+      <DependentUpon>202004181509473_addingAttendeestoConcert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004181534250_RemovingAttendeestoConcert.resx">
+      <DependentUpon>202004181534250_RemovingAttendeestoConcert.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

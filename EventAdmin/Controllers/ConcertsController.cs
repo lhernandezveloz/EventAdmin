@@ -1,6 +1,7 @@
 ﻿using EventAdmin.Models;
 using EventAdmin.ViewModels;
 using Microsoft.AspNet.Identity;
+using Ninject;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -9,10 +10,11 @@ namespace EventAdmin.Controllers
     public class ConcertsController : Controller
     {
         private readonly ApplicationDbContext _dbContext;
+        IKernel kernel = new StandardKernel(new DIModule("DbContext"));
 
         public ConcertsController()
         {
-            _dbContext = new ApplicationDbContext();
+            _dbContext = kernel.Get<ApplicationDbContext>();
         }
 
         [Authorize]

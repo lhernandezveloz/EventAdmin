@@ -1,6 +1,7 @@
 ﻿using EventAdmin.DTOs;
 using EventAdmin.Models;
 using Microsoft.AspNet.Identity;
+using Ninject;
 using System.Linq;
 using System.Web.Http;
 
@@ -11,10 +12,13 @@ namespace EventAdmin.Controllers
     public class AttendancesController : ApiController
     {
         private readonly ApplicationDbContext _DbContext;
+        IKernel kernel = new StandardKernel(new DIModule("DbContext"));
+
         private readonly string userId;
+
         public AttendancesController()
         {
-            _DbContext = new ApplicationDbContext();
+            _DbContext = kernel.Get<ApplicationDbContext>();
             userId = User.Identity.GetUserId();
         }
         public IHttpActionResult Get(ConcertDTO dto)
@@ -32,9 +36,13 @@ namespace EventAdmin.Controllers
         public IHttpActionResult Post(ConcertDTO dto)
         {
 
-            if (_DbContext.Attendances.Any(x => x.ConcertId == dto.ConcertId && x.AttendeeId == userId))
+            var attendance = _DbContext.Attendances.Where(x => x.ConcertId == dto.ConcertId && x.AttendeeId == userId).FirstOrDefault();
+            if (attendance != null)
             {
-                return BadRequest("Attendee already exists.");
+                _DbContext.Attendances.Remove(attendance);
+                _DbContext.SaveChanges();
+
+                return Ok("Removed");
             }
 
             var attendee = new Attendance
